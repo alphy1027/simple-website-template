@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageWrapper from "@/components/shared/PageWrapper";
 import { generateSEO } from "@/lib/seo";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
         <Header />
         <main className="flex flex-col flex-1 gap-x-10">{children}</main>
         <Footer />
+        <Toaster position="top-center" />
       </body>
     </html>
   );

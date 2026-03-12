@@ -4,7 +4,9 @@ interface SiteConfig {
   siteUrl: string;
   phone: string;
   email: string;
-  address: string;
+  address: {
+    location: string;
+  };
   ogImage: string;
   socialLinks: {
     twitter: string;
@@ -17,10 +19,12 @@ interface SiteConfig {
 export const siteConfig: SiteConfig = {
   name: "Scripttag Web Solutions",
   description: "Building web for the future",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+  siteUrl: process.env.SITE_URL || "http://localhost:3000",
   phone: "+254...",
-  email: "",
-  address: "",
+  email: "knundahalphones@gmail.com",
+  address: {
+    location: "Obama Estate",
+  },
   ogImage: "",
   socialLinks: {
     twitter: "",
