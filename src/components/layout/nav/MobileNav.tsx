@@ -42,7 +42,9 @@ export default function MobileNav() {
           <ul className="flex flex-col gap-1 divide-y divide-slate-200">
             {navLinks.map((navLink) => (
               <li key={navLink.label} className="">
-                <MobileNavLink href={navLink.to} label={navLink.label} />
+                <SheetClose asChild>
+                  <MobileNavLink href={navLink.to} label={navLink.label} />
+                </SheetClose>
               </li>
             ))}
           </ul>
