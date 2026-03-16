@@ -12,24 +12,31 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function sendContactEmail(formData: ContactFormValues) {
   try {
     const validatedData = contactSchema.parse(formData);
-
-    await resend.emails.send({
-      from: `${siteConfig.name} <${siteConfig.email}>`,
+    const { data, error } = await resend.emails.send({
+      from: `${siteConfig.name} <onboarding@resend.dev>`,
       to: [siteConfig.email],
       subject: "New contact form submission",
       replyTo: validatedData.email,
       react: ContactEmailTemplate({ formData: validatedData }),
     });
 
+    if (error) {
+      return {
+        success: false,
+        message: "Something went wrong, please try again",
+        error: error,
+      };
+    }
+
     return {
       success: true,
       message: "Message sent successfully",
     };
   } catch (error) {
-    console.log("Form submission error: ", error);
     return {
       success: false,
       message: "Something went wrong, please try again",
+      error: error,
     };
   }
 }
