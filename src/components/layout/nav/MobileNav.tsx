@@ -19,7 +19,7 @@ export default function MobileNav() {
     <Sheet>
       <SheetTrigger asChild>
         <Button variant="ghost">
-          <Menu className="size-5" />
+          <Menu className="size-6" />
         </Button>
       </SheetTrigger>
       <SheetContent
@@ -33,8 +33,8 @@ export default function MobileNav() {
             Make changes to your profile here. Click save when you&apos;re done.
           </SheetDescription>
           <SheetClose asChild>
-            <Button variant="ghost" className="w-fit translate-x-1/3">
-              <XIcon className="size-5" />
+            <Button variant="ghost" className="w-fit translate-x-1/4">
+              <XIcon className="size-6" />
             </Button>
           </SheetClose>
         </SheetHeader>

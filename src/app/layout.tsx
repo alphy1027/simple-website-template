@@ -30,9 +30,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen gap-y-10 flex flex-col`}
       >
         <Header />
-        <main className="flex flex-col flex-1 gap-x-10">{children}</main>
+        <main className="flex flex-col flex-1 gap-x-10">
+          {children}
+          <Toaster position="top-center" />
+        </main>
         <Footer />
-        <Toaster position="top-center" />
       </body>
     </html>
   );
