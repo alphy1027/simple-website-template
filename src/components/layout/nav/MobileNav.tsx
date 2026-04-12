@@ -13,6 +13,7 @@ import { navLinks } from "./Navbar";
 import MobileNavLink from "./components/MobileNavLink";
 import { Menu, XIcon } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import Copyright from "@/components/shared/Copyright";
 
 export default function MobileNav() {
   return (
@@ -22,11 +23,7 @@ export default function MobileNav() {
           <Menu className="size-6" />
         </Button>
       </SheetTrigger>
-      <SheetContent
-        showCloseButton={false}
-        side="left"
-        className="p-4 justify-between"
-      >
+      <SheetContent showCloseButton={false} side="left" className="p-4 justify-between">
         <SheetHeader className="flex-row items-center p-0 justify-between">
           <SheetTitle className="font-bold">LOGO</SheetTitle>
           <SheetDescription className="sr-only">
@@ -51,10 +48,7 @@ export default function MobileNav() {
         </nav>
         <SheetFooter className="text-center p-0">
           <small className="text-green-400">{siteConfig.name}</small>
-          <small className="text-slate-500">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
-            reserved
-          </small>
+          <Copyright />
         </SheetFooter>
       </SheetContent>
     </Sheet>

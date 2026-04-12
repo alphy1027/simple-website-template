@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "@/styles/globals.css";
+import { Poppins, Sofia_Sans } from "next/font/google";
 import Header from "@/components/layout/Header";
+import "@/styles/globals.css";
 import Footer from "@/components/layout/Footer";
-import PageWrapper from "@/components/shared/PageWrapper";
 import { generateSEO } from "@/lib/seo";
 import { Toaster } from "sonner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const sofiaSans = Sofia_Sans({
+  variable: "--font-sofia-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = generateSEO();
@@ -26,9 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="min-h-screen">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen gap-y-10 flex flex-col`}
-      >
+      <body className={`${poppins.variable} ${sofiaSans.variable} antialiased min-h-screen gap-y-10 flex flex-col`}>
         <Header />
         <main className="flex flex-col flex-1 gap-x-10">
           {children}
